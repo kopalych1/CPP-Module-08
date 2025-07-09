@@ -4,22 +4,22 @@
 		{
 			"label": "Build ex00",
 			"type": "shell",
-			"command": "make -C /home/kopalych/Campus/Projects/CPP-Module-07/ex00/"
+			"command": "make -C /home/kopalych/Campus/Projects/CPP-Module-08/ex00/"
 		},
 		{
 			"label": "Build ex01",
 			"type": "shell",
-			"command": "make -C /home/kopalych/Campus/Projects/CPP-Module-07/ex01/"
+			"command": "make -C /home/kopalych/Campus/Projects/CPP-Module-08/ex01/"
 		},
 		{
 			"label": "Build ex02",
 			"type": "shell",
-			"command": "make -C /home/kopalych/Campus/Projects/CPP-Module-07/ex02/"
+			"command": "make -C /home/kopalych/Campus/Projects/CPP-Module-08/ex02/"
 		},
 		{
 			"label": "Valgrind ex00",
 			"type": "shell",
-			"command": "valgrind --leak-check=full ./____",
+			"command": "valgrind --leak-check=full ./Easyfind",
 			"options": {
 				"cwd": "${workspaceFolder}/ex00"
 			},
