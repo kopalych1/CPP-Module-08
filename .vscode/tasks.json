@@ -28,7 +28,7 @@
 		{
 			"label": "Valgrind ex01",
 			"type": "shell",
-			"command": "valgrind --leak-check=full ./____",
+			"command": "valgrind --leak-check=full ./Span",
 			"options": {
 				"cwd": "${workspaceFolder}/ex01"
 			},

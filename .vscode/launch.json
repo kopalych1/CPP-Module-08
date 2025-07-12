@@ -18,7 +18,7 @@
 			"name": "(gdb) Launch ex01",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "/home/kopalych/Campus/Projects/CPP-Module-08/ex01/____",
+			"program": "/home/kopalych/Campus/Projects/CPP-Module-08/ex01/Span",
 			"cwd": "/home/kopalych/Campus/Projects/CPP-Module-08/ex01/",
 			"preLaunchTask": "Build ex01",
 			// ...other settings...
