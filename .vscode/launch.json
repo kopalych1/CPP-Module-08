@@ -28,7 +28,7 @@
 			"name": "(gdb) Launch ex02",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "/home/kopalych/Campus/Projects/CPP-Module-08/ex02/____",
+			"program": "/home/kopalych/Campus/Projects/CPP-Module-08/ex02/Abomination",
 			"cwd": "/home/kopalych/Campus/Projects/CPP-Module-08/ex02/",
 			"preLaunchTask": "Build ex02",
 			// ...other settings...

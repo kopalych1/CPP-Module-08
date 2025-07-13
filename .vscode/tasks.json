@@ -37,7 +37,7 @@
 		{
 			"label": "Valgrind ex02",
 			"type": "shell",
-			"command": "valgrind --leak-check=full ./____",
+			"command": "valgrind --leak-check=full ./Abomination",
 			"options": {
 				"cwd": "${workspaceFolder}/ex02"
 			},
