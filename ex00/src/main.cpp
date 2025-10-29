@@ -6,7 +6,7 @@
 /*   By: akostian <akostian@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 03:00:41 by akostian          #+#    #+#             */
-/*   Updated: 2025/08/21 18:54:59 by akostian         ###   ########.fr       */
+/*   Updated: 2025/10/29 14:54:57 by akostian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include <list>
 #include <vector>
 
-#include "../include/colors.hpp"
-#include "../include/easyfind.hpp"
+#include "colors.hpp"
+#include "easyfind.hpp"
 
 /* printing templates */
 template <typename T>

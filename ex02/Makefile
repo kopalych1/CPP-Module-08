@@ -6,7 +6,7 @@
 #    By: akostian <akostian@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/26 16:43:30 by akostian          #+#    #+#              #
-#    Updated: 2025/07/13 06:14:37 by akostian         ###   ########.fr        #
+#    Updated: 2025/10/29 15:00:27 by akostian         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,16 +21,12 @@ INC_DIR				= include
 INCLUDES			= -I$(INC_DIR)
 
 BUILD_DIR			= build
-LOG_DIR				= logs
 
 OBJS				= $(addprefix $(BUILD_DIR)/, $(SRCS:%.cpp=%.o))
 DEPS				= $(OBJS:.o=.d)
 
 CC					= c++
-CFLAGS				= -Wall -Wextra -Werror -g3 -O3 -std=c++98 -MMD
-
-NORMINETTE			= norminette
-NORMINETTE_FLAGS	= --use-gitignore
+CFLAGS				= -Wall -Wextra -Werror -g3 -std=c++98 -MMD
 
 RM					= rm -rf
 
@@ -41,7 +37,7 @@ all: $(NAME)
 
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 #
 
 
@@ -49,13 +45,9 @@ $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 #
 
-$(LOG_DIR):
-	mkdir -p $(LOG_DIR)
-#
-
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp | $(BUILD_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 #
 
 

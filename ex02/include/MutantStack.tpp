@@ -6,7 +6,7 @@
 /*   By: akostian <akostian@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 02:35:01 by akostian          #+#    #+#             */
-/*   Updated: 2025/07/13 06:13:38 by akostian         ###   ########.fr       */
+/*   Updated: 2025/10/29 15:17:17 by akostian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,21 @@ std::ostream& operator<<(std::ostream& os, const MutantStack<T>& arr) {
 	os << ']';
 
 	return os;
+}
+
+template <typename T>
+typename MutantStack<T>::iterator MutantStack<T>::begin() {
+	return this->c.begin();
+}
+template <typename T>
+typename MutantStack<T>::iterator MutantStack<T>::end() {
+	return this->c.end();
+}
+template <typename T>
+typename MutantStack<T>::const_iterator MutantStack<T>::begin() const {
+	return this->c.begin();
+}
+template <typename T>
+typename MutantStack<T>::const_iterator MutantStack<T>::end() const {
+	return this->c.end();
 }

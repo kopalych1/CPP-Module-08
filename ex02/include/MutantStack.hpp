@@ -6,7 +6,7 @@
 /*   By: akostian <akostian@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 02:35:06 by akostian          #+#    #+#             */
-/*   Updated: 2025/07/13 06:02:54 by akostian         ###   ########.fr       */
+/*   Updated: 2025/10/29 15:16:49 by akostian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ class MutantStack : public std::stack<T> {
 	template <typename U>
 	friend std::ostream& operator<<(std::ostream& os, const MutantStack<U>& arr);
 
-	iterator begin() { return this->c.begin(); }
-	iterator end() { return this->c.end(); }
-	const_iterator begin() const { return this->c.begin(); }
-	const_iterator end() const { return this->c.end(); }
+	iterator begin();
+	iterator end();
+	const_iterator begin() const;
+	const_iterator end() const;
 };
 
 #include "MutantStack.tpp"

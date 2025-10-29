@@ -6,14 +6,14 @@
 /*   By: akostian <akostian@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 02:35:15 by akostian          #+#    #+#             */
-/*   Updated: 2025/07/13 06:13:59 by akostian         ###   ########.fr       */
+/*   Updated: 2025/10/29 15:18:19 by akostian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <list>
 
-#include "../include/MutantStack.hpp"
+#include "MutantStack.hpp"
 
 int main(void) {
 	{

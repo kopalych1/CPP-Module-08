@@ -6,7 +6,7 @@
 /*   By: akostian <akostian@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 19:13:27 by akostian          #+#    #+#             */
-/*   Updated: 2025/10/29 14:50:05 by akostian         ###   ########.fr       */
+/*   Updated: 2025/10/29 15:18:29 by akostian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <ctime>
 #include <iostream>
 
-#include "../include/Span.hpp"
+#include "Span.hpp"
 
 // #include <cstdlib>
 
