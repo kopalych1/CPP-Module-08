@@ -6,15 +6,16 @@
 /*   By: akostian <akostian@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 19:13:27 by akostian          #+#    #+#             */
-/*   Updated: 2025/07/13 00:07:27 by akostian         ###   ########.fr       */
+/*   Updated: 2025/10/29 14:50:05 by akostian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Span.hpp"
-#include <iostream>
+#include <unistd.h>
 
 #include <ctime>
-#include <unistd.h>
+#include <iostream>
+
+#include "../include/Span.hpp"
 
 // #include <cstdlib>
 
@@ -26,17 +27,13 @@
 // };
 
 template <typename T>
-void	printArray(T arr, size_t size)
-{
+void printArray(T arr, size_t size) {
 	std::cout << '[';
-	for (size_t i = 0; i < size; i++)
-		std::cout << arr[i] << ((i + 1 < size) ? ", ": "");
+	for (size_t i = 0; i < size; i++) std::cout << arr[i] << ((i + 1 < size) ? ", " : "");
 	std::cout << ']';
 }
 
-
-int main()
-{
+int main() {
 	// std::srand(std::time(0));
 	// {
 	// 	std::cout << "\nRandom values test:\n" << "\n";
@@ -44,9 +41,10 @@ int main()
 	// 		std::cout << Generator::genInt(0, 100) << "\n";
 	// }
 	{
-		std::cout << "\nClock test:\n" << "\n";
+		std::cout << "\nClock test:\n"
+		          << "\n";
 
-		std::clock_t	start, end;
+		std::clock_t start, end;
 
 		start = std::clock();
 		usleep(50000);
@@ -54,39 +52,41 @@ int main()
 		std::cout << "Elapsed: " << static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000 << "ms\n";
 	}
 	{
-		std::cout << "\nBig amount test:\n" << "\n";
+		std::cout << "\nBig amount test:\n"
+		          << "\n";
 
-		std::clock_t	start, end;
+		std::clock_t start, end;
 
-		Span	a(100 * 1000);
+		Span a(100 * 1000);
 
 		start = std::clock();
-		for (size_t i = 0; i < 100 * 1000; i++)
-			a.addNumber(i);
+		for (size_t i = 0; i < 100 * 1000; i++) a.addNumber(i);
 		end = std::clock();
 
 		std::cout << "Elapsed: " << static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000 << "ms\n";
 
-		std::cout << "a.longestSpan():\t"  << a.longestSpan()  << "\n";
+		std::cout << "a.longestSpan():\t" << a.longestSpan() << "\n";
 		std::cout << "a.shortestSpan():\t" << a.shortestSpan() << "\n";
 	}
 	{
-		std::cout << "\nBasic test:\n" << "\n";
+		std::cout << "\nBasic test:\n"
+		          << "\n";
 
-		Span	span(10);
+		Span span(10);
 
 		span.addNumber(1);
 		span.addNumber(5);
 		span.addNumber(55);
 
-		std::cout << "span.longestSpan():\t"  << span.longestSpan()  << "\n";
+		std::cout << "span.longestSpan():\t" << span.longestSpan() << "\n";
 		std::cout << "span.shortestSpan():\t" << span.shortestSpan() << "\n";
 	}
 	{
-		std::cout << "\nVectors insertion:\n" << "\n";
+		std::cout << "\nVectors insertion:\n"
+		          << "\n";
 
-		std::vector<int>	a;
-		std::vector<int>	b;
+		std::vector<int> a;
+		std::vector<int> b;
 
 		b.push_back(2);
 		b.push_back(4);
@@ -115,13 +115,12 @@ int main()
 		std::cout << "\n";
 
 		// Now the same with span
-		Span	smallSpan(5);
-		Span	span(20);
+		Span smallSpan(5);
+		Span span(20);
 
 		try {
 			smallSpan.addNumbers(a.begin(), a.end());
-		}
-		catch(const std::exception& e) {
+		} catch (const std::exception& e) {
 			std::cerr << e.what() << '\n';
 		}
 
@@ -132,7 +131,7 @@ int main()
 
 		std::cout << "span: " << span << "\n";
 
-		std::cout << "span.longestSpan():\t"  << span.longestSpan()  << "\n";
+		std::cout << "span.longestSpan():\t" << span.longestSpan() << "\n";
 		std::cout << "span.shortestSpan():\t" << span.shortestSpan() << "\n";
 	}
 }

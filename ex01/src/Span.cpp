@@ -12,29 +12,13 @@
 
 #include "../include/Span.hpp"
 
-Span::Span() :
-	elems_(0),
-	max_size_(0),
-	size_(0)
-{
-}
+Span::Span() : elems_(0), max_size_(0), size_(0) {}
 
-Span::Span(unsigned int N) :
-	elems_(N),
-	max_size_(N),
-	size_(0)
-{
-}
+Span::Span(unsigned int N) : elems_(N), max_size_(N), size_(0) {}
 
-Span::Span(const Span& other) :
-	elems_(other.elems_),
-	max_size_(other.max_size_),
-	size_(other.size_)
-{
-}
+Span::Span(const Span& other) : elems_(other.elems_), max_size_(other.max_size_), size_(other.size_) {}
 
-Span& Span::operator=(const Span& other)
-{
+Span& Span::operator=(const Span& other) {
 	if (this != &other) {
 		if (this->max_size_ < other.max_size_)
 			throw std::out_of_range("Cannot assign: source Span is larger than destination Span");
@@ -45,36 +29,27 @@ Span& Span::operator=(const Span& other)
 	return *this;
 }
 
-Span::~Span()
-{
-}
+Span::~Span() {}
 
-
-std::ostream	&operator<<(std::ostream& os, const Span& span)
-{
+std::ostream& operator<<(std::ostream& os, const Span& span) {
 	os << '[';
 	for (size_t i = 0; i < span.size_; i++)
-		os << static_cast<int>(span.elems_[i]) << ((i + 1 < span.size_) ? ", ": "");
+		os << static_cast<int>(span.elems_[i]) << ((i + 1 < span.size_) ? ", " : "");
 	os << ']';
 
 	return os;
 }
 
-
-void			Span::addNumber(int num)
-{
-	if (size_ >= this->max_size_)
-		throw std::out_of_range("Span::addNumber: cannot add more numbers, span is full");
+void Span::addNumber(int num) {
+	if (size_ >= this->max_size_) throw std::out_of_range("Span::addNumber: cannot add more numbers, span is full");
 
 	this->elems_[this->size_++] = num;
 }
 
-unsigned int	Span::shortestSpan() const
-{
-	if (this->size_ < 2)
-		throw std::length_error("Span::shortestSpan: need at least two numbers to compute a span");
+unsigned int Span::shortestSpan() const {
+	if (this->size_ < 2) throw std::length_error("Span::shortestSpan: need at least two numbers to compute a span");
 
-	std::vector<int>	tmp(this->elems_);
+	std::vector<int> tmp(this->elems_);
 
 	std::sort(tmp.begin(), tmp.begin() + this->size_);
 	std::adjacent_difference(tmp.begin(), tmp.begin() + this->size_, tmp.begin());
@@ -82,20 +57,17 @@ unsigned int	Span::shortestSpan() const
 	return *std::min_element(tmp.begin() + 1, tmp.begin() + this->size_);
 }
 
-unsigned int	Span::longestSpan() const
-{
-	if (this->size_ < 2)
-		throw std::length_error("Span::shortestSpan: need at least two numbers to compute a span");
+unsigned int Span::longestSpan() const {
+	if (this->size_ < 2) throw std::length_error("Span::shortestSpan: need at least two numbers to compute a span");
 
-	std::vector<int>	tmp(this->elems_);
+	std::vector<int> tmp(this->elems_);
 
 	std::sort(tmp.begin(), tmp.begin() + this->size_);
 
 	return tmp[this->size_ - 1] - tmp.front();
 }
 
-void			Span::addNumbers(const std::vector<int>::iterator &begin, const std::vector<int>::iterator &end)
-{
+void Span::addNumbers(const std::vector<int>::iterator& begin, const std::vector<int>::iterator& end) {
 	if ((end - begin) > (this->max_size_ - this->size_))
 		throw std::out_of_range("Span::addNumbers: not enough space to add all numbers");
 

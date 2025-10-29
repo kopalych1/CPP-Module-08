@@ -11,40 +11,34 @@
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
-# define SPAN_HPP
+#define SPAN_HPP
 
-# include <iostream>
-
-# include <vector>
-
-# include <stdexcept>
-
-# include <algorithm>
-# include <climits>
-# include <numeric>
+#include <algorithm>
+#include <climits>
+#include <iostream>
+#include <numeric>
+#include <stdexcept>
+#include <vector>
 
 class Span {
-	private:
-		std::vector<int>	elems_;
-		const unsigned int	max_size_;
-		unsigned int		size_;
+   private:
+	std::vector<int> elems_;
+	const unsigned int max_size_;
+	unsigned int size_;
 
-	public:
-		Span();
-		Span(unsigned int N);
-		Span(const Span& other);
-		Span& operator=(const Span& other);
-		~Span();
+   public:
+	Span();
+	Span(unsigned int N);
+	Span(const Span& other);
+	Span& operator=(const Span& other);
+	~Span();
 
-		friend std::ostream& operator<<(std::ostream& os, const Span& span);
+	friend std::ostream& operator<<(std::ostream& os, const Span& span);
 
-		void			addNumber(int num);
-		void			addNumbers(
-							const std::vector<int>::iterator &begin,
-							const std::vector<int>::iterator &end
-		);
-		unsigned int	shortestSpan() const;
-		unsigned int	longestSpan() const;
+	void addNumber(int num);
+	void addNumbers(const std::vector<int>::iterator& begin, const std::vector<int>::iterator& end);
+	unsigned int shortestSpan() const;
+	unsigned int longestSpan() const;
 };
 
-#endif // SPAN_HPP
+#endif  // SPAN_HPP

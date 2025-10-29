@@ -11,28 +11,27 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include "../include/MutantStack.hpp"
-
 #include <list>
 
-int main(void)
-{
+#include "../include/MutantStack.hpp"
+
+int main(void) {
 	{
-		MutantStack<int>	a;
+		MutantStack<int> a;
 
 		a.push(-42);
 		a.push(0);
 		a.push(42);
 
 		std::cout << "*a.begin(): " << *a.begin() << "\n";
-		std::cout << "*a.end(): "   << *(a.end() - 1) << "\n";
+		std::cout << "*a.end(): " << *(a.end() - 1) << "\n";
 
-		MutantStack<int>::iterator	it;
+		MutantStack<int>::iterator it;
 
 		std::cout << "a: " << a << "\n";
 	}
 	{
-		MutantStack<std::string>	a;
+		MutantStack<std::string> a;
 
 		a.push("123");
 		a.push("HELLO");
@@ -41,8 +40,7 @@ int main(void)
 		std::cout << "a: " << a << "\n";
 
 		std::cout << "*a.begin(): " << *a.begin() << "\n";
-		std::cout << "*a.end(): "   << *(a.end() - 1) << "\n";
-
+		std::cout << "*a.end(): " << *(a.end() - 1) << "\n";
 	}
 	{
 		MutantStack<int> mstack;
@@ -63,8 +61,7 @@ int main(void)
 
 		++it;
 		--it;
-		while (it != ite)
-		{
+		while (it != ite) {
 			std::cout << *it << std::endl;
 			++it;
 		}
